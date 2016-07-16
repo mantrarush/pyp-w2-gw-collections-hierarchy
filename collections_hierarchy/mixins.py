@@ -1,6 +1,18 @@
 class ComparableMixin(object):
     def __eq__(self, other):
         pass
+        # IF LIST
+        # if lists are equal length
+        # retval = True
+        # for i in range(0,len(self)):
+        #     if self[i] == other[i]:
+        #         retval = False
+        
+        # IF DICT
+        # for key, value in self:
+            #...
+
+                
     def __ne__(self, other):
         # Relies in __eq__
         pass
@@ -8,7 +20,7 @@ class ComparableMixin(object):
 
 class SequenceMixin(object):
     def __iter__(self):
-        pass
+        self.elements = self.get_elements()
 
     def __next__(self):
         """This method will rely on the get_elements() method of the

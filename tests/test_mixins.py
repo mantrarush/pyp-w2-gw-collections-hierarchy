@@ -95,19 +95,19 @@ class ComparableMixinTestCase(unittest.TestCase):
 class SequenceMixinTestCase(unittest.TestCase):
     def test_iterator_next(self):
         l = SequenceMixinList(['hello', 9, 'Python'])
-
-        self.assertEqual(next(l), 'hello')
-        self.assertEqual(next(l), 9)
-        self.assertEqual(next(l), 'Python')
+        it = iter(l)
+        self.assertEqual(next(it), 'hello')
+        self.assertEqual(next(it), 9)
+        self.assertEqual(next(it), 'Python')
 
         with self.assertRaises(StopIteration):
             next(l)
 
         d = SequenceMixinDict({'a': 1, 'b': 2})
         items = list(d.data.items())
-
-        self.assertEqual(next(d), items[0])
-        self.assertEqual(next(d), items[1])
+        it = iter(items)
+        self.assertEqual(next(it), items[0])
+        self.assertEqual(next(it), items[1])
 
         with self.assertRaises(StopIteration):
             next(d)
