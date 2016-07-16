@@ -24,3 +24,9 @@ class Dict(HashableMixin,
 
     def get_elements(self):
         return {}
+
+my_list = List([1, 2])
+my_list.data # [1, 2]
+
+my_list = List()
+my_list.data # []
